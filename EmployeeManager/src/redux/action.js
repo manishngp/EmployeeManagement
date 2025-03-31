@@ -1,4 +1,4 @@
-import { SUCCESS, LOADING, ERR, NEWONE, UPDATED } from "./actionTypes"
+import { SUCCESS, LOADING, ERR, NEWONE, UPDATED , DELETE} from "./actionTypes"
 
 import axios from "axios";
 
@@ -28,7 +28,7 @@ export const deleteData =(id)=>{
     return async (dispatch)=>{
         try {
             await axios.delete(`https://employeem-bce7f-default-rtdb.firebaseio.com/employees/${id}.json`)
-            dispatch({})
+            dispatch({type:DELETE, payload:id})
         } catch (error) {
             console.log(error)
         }

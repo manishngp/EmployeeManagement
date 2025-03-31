@@ -8,7 +8,7 @@ function Dashboard({ children }) {
   
   // Helper function to determine if a link is active
   const isActive = (path) => location.pathname === path;
-  
+   console.log(children);
   return (
     <div className="flex h-screen bg-gray-50">
       {/* Sidebar */}
@@ -94,14 +94,16 @@ function Dashboard({ children }) {
       
       {/* Main Content Area */}
       <div className="ml-64 flex-1 flex flex-col">
-        {/* Top navbar */}
-        <div className="bg-white shadow-sm border-b h-16 flex items-center px-6">
-          <Operation />
-        </div>
+      
         
         {/* Content */}
         <div className="p-6 flex-1 bg-gray-50">
           <div className="bg-white rounded-lg shadow-sm p-6">
+              {/* Top navbar */}
+        {/* <div className="bg-white shadow-sm border-b h-16 flex items-center px-6">
+          <Operation />
+        </div> */}
+       
             {children}
           </div>
         </div>

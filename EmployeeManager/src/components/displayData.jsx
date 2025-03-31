@@ -12,7 +12,7 @@ function DisplayData(){
         dispatch(fetchEmployees());
     }, [dispatch]);
 
-    const {post, isloading, error}= useSelector((state) => state);
+    const {post}= useSelector((state) => state);
    
     //    const hh =useSelector((state)=>state.post)
         console.log(post)
@@ -30,7 +30,7 @@ function DisplayData(){
                         <img
                           src={post[1].profile_image}
                           alt={post[1].name}
-                          className="w-full h-48 object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-48 object-fill object-center transition-transform duration-500 group-hover:scale-105"
                         />
                         <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
                           <h2 className="text-xl font-bold text-white mb-1">{post[1].name}</h2>
